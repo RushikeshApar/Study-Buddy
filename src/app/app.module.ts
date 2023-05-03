@@ -9,7 +9,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 // import { HeaderComponent } from './header/header.component';
-import { SideNavComponent } from './side-nav/side-nav.component';
+//import { SideNavComponent } from './side-nav/side-nav.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
@@ -24,7 +24,7 @@ import { StudyMaterialComponent } from './study-material/study-material.componen
   declarations: [
     AppComponent,
     //HeaderComponent,
-    SideNavComponent,
+    //SideNavComponent,
     HomeComponent,
     AboutusComponent,
     ChoosecourseComponent,
