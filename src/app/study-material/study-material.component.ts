@@ -20,20 +20,20 @@ export class StudyMaterialComponent implements OnInit {
         'https://angular-1a465-default-rtdb.firebaseio.com/Users.json'
       )
 
-      .pipe(
-        map((res) => {
-          const users = [];
-          for (const key in res) {
-            if (res.hasOwnProperty(key)) {
-              users.push({ ...res[key], id: key });
-            }
-          }
-          return users;
-        })
-      )
+      // .pipe(
+      //   map((res) => {
+      //     const users = [];
+      //     for (const key in res) {
+      //       if (res.hasOwnProperty(key)) {
+      //         users.push({ ...res[key], id: key });
+      //       }
+      //     }
+       //   return users;
+      //  })
+      //)
       .subscribe((users) => {
         console.log(users);
-        this.allUsers = users;  
+      //  this.allUsers = users;  
       });
   }
 
