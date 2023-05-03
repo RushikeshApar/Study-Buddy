@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { ChoosecourseComponent } from './choosecourse/choosecourse.component';
 import { LoginComponent } from './login/login.component';
+import { StudyMaterialComponent } from './study-material/study-material.component';
 
 
 const routes: Routes = [
@@ -20,6 +21,10 @@ const routes: Routes = [
 {
   path:'login',
   component:LoginComponent
+},
+{
+  path:'studymaterial',
+  component: StudyMaterialComponent
 },
 {
   path:'**',

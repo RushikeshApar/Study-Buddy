@@ -62,7 +62,7 @@ export class LoginComponent implements OnInit {
 
     console.log(field);
 
-    this.http.post('https://angular-1a465-default-rtdb.firebaseio.com/Users.json',field).subscribe((res)=>{
+    this.http.post<{name:string}>('https://angular-1a465-default-rtdb.firebaseio.com/Users.json',field).subscribe((res)=>{
 
     console.log(res);
 
