@@ -1,0 +1,31 @@
+<div class="header">
+<mat-toolbar class="toolbar">
+  <mat-toolbar-row >
+    <button mat-icon-button>
+      <mat-icon   (click)="sidenav.toggle()">menu</mat-icon>
+    </button>
+    <div class="heading">
+      <h1>Study-Buddy</h1>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+</div>
+
+<mat-sidenav-container >
+  <mat-sidenav #sidenav opened="true" mode="side" >
+    <mat-nav-list>
+      <a routerLink="/home" mat-list-item> Home</a>
+      <a routerLink="/choosecourse" mat-list-item> Choose Course </a>
+      <a mat-list-item> Study Material</a>
+      <a routerLink="/aboutus" mat-list-item>About Us</a>
+      <a mat-list-item>Contact Us</a>
+      <a mat-list-item>Help</a>
+      <a routerLink="/login" mat-list-item>Login</a>
+      <a mat-list-item>Logout</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content class="sidenav-content">
+    <!-- <div style="height: 88vh;"></div> -->
+    <router-outlet> </router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

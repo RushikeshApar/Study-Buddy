@@ -1,0 +1,135 @@
+<div class="container pl-3 pr-3 pb-1 mt-4 mb-3">
+  <form class="border rounded-4 p-3" [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)">
+    <div class="row g-0">
+      <div class="col text-center p-2 mb-3 bg-light">
+        <span class="fs-3" style="color: rgb(176, 47, 199);">Register</span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col mb-3">
+        <label for="firstname" class="form-label"> Name <span style="color: red;">*</span></label>
+        <input type="text" class="form-control" id="firstname" formControlName="FirstName" name="fn" />
+
+        <div class="form-text text-danger"
+          *ngIf="FirstName.errors?.['required'] && (FirstName.dirty|| FirstName.touched)">
+          this field is required
+        </div>
+
+        <div class="form-text text-danger"
+          *ngIf="!!FirstName.errors?.['minlength'] && (FirstName.dirty || FirstName.touched)">
+          First Name is to Short
+        </div>
+
+        <div class="form-text text-danger"
+          *ngIf="FirstName.errors?.['pattern'] && (FirstName.dirty|| FirstName.touched)">
+          First Name Should Start With Alphabet
+        </div>
+      </div>
+
+      <div class="col mb-3">
+        <label for="LastName" class="form-label">
+          Last Name <span style="color: red;">*</span></label>
+        <input type="text" class="form-control" id="LastName " formControlName="LastName" name="ln" />
+        <div class="form-text text-danger" *ngIf="LastName.errors?.['required'] && (LastName.dirty|| LastName.touched)">
+          this field is required
+        </div>
+        <div class="form-text text-danger"
+          *ngIf="!!LastName.errors?.['minlength'] && (LastName.dirty || LastName.touched)">
+          Last Name is to Short
+        </div>
+
+        <div class="form-text text-danger" *ngIf="LastName.errors?.['pattern'] && (LastName.dirty|| LastName.touched)">
+          Last Name Should Start With Alphabet
+        </div>
+      </div>
+
+      <div class="raw">
+        <div class="col mb-3">
+          <label for="email" class="form-label">
+            Email address <span style="color: red;">*</span></label>
+          <input type="email" class="form-control" id="email" formControlName="Email" name="e" />
+          <div class="form-text text-danger" *ngIf="Email.errors?.['required'] && (Email.dirty|| Email.touched)">
+            this field is required
+          </div>
+
+          <div class="form-text text-danger" *ngIf="Email.errors?.['email'] && (Email.dirty|| Email.touched)">
+            Email is Invalid
+          </div>
+        </div>
+      </div>
+
+      <div class="raw">
+        <div class="col mb-3">
+          <label for="Mobile" class="form-label">Mobile Number <span style="color: red;">*</span></label>
+          <input class="form-control" id="mobile" formControlName="Mobile" name="m" />
+          <div class="form-text text-danger" *ngIf="Mobile.errors?.['required'] && (Mobile.dirty|| Mobile.touched)">
+            this field is required
+          </div>
+
+          <div class="form-text text-danger" *ngIf="Mobile.errors?.['pattern']">
+            Number is Invalid
+          </div>
+
+          <div class="form-text text-danger" *ngIf="!!Mobile.errors?.['minlength'] && (Mobile.dirty || Mobile.touched)">
+            Number is to Short
+          </div>
+
+          <div class="form-text text-danger" *ngIf="!!Mobile.errors?.['maxlength'] && (Mobile.dirty || Mobile.touched)">
+            Number is to Long
+          </div>
+        </div>
+      </div>
+
+      <div class="raw">
+        <div class="col mb-3">
+          <label for="Collage" class="form-label">Collage Name <span style="color: red;">*</span></label>
+          <input type="text" class="form-control" id="collage" formControlName="Collage" name="cl" />
+          <div class="form-text text-danger" *ngIf="Collage.errors?.['required'] && (Collage.dirty|| Collage.touched)">
+            this field is required
+          </div>
+        </div>
+      </div>
+
+      <div class="col mb-3">
+        <label for="Year" class="form-label">Year <span style="color: red;">*</span></label>
+        <input class="form-control" id="Year" formControlName="Year" name="y" />
+        <div class="form-text text-danger" *ngIf="Year.errors?.['required'] && (Year.dirty|| Year.touched)">
+          this field is required
+        </div>
+      </div>
+
+      <div class="col mb-3">
+        <label for="Branch" class="form-label">Branch <span style="color: red;">*</span></label>
+        <input type="text" class="form-control" id="Branch " formControlName="Branch" name="b" />
+        <div class="form-text text-danger" *ngIf="Branch.errors?.['required'] && (Branch.dirty|| Branch.touched)">
+          this field is required
+        </div>
+      </div>
+    </div>
+
+    <div class="col ps-3 mb-3"></div>
+
+    <div class="m-1">Gender <span style="color: red;">*</span></div>
+    <div class="form-check form-check-inline">
+      <input type="radio" class="form-check-input" value="m" id="male" formControlName="Gender" />
+      <label class="form-check-label" for="male">Male</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input type="radio" class="form-check-input" value="f" id="female" formControlName="Gender" />
+      <label class="form-check-label" for="female">Female</label>
+    </div>
+
+    <div class="form-text text-danger" *ngIf="Gender.errors?.['required']">
+      Select Gender
+    </div>
+
+    <div class="col-6 offset-3 mt-3">
+      <div class="d-grid">
+        <button type="submit" [disabled]="loginForm.invalid" class="btn btn-primary" >
+          Submit
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
