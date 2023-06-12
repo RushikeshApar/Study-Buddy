@@ -1,7 +1,7 @@
 <!-- loader.component.html -->
 
 <div class="container pl-3 pr-3 pb-1 mt-4 mb-3">
-  <form class="border rounded-4 p-3" [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)">
+  <form class="border rounded-4 p-3" [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value);loginForm.reset();">
     <div class="row g-0">
       <div class="col text-center p-2 mb-3 bg-light">
         <span class="fs-3" style="color: rgb(176, 47, 199)">Register</span>
@@ -129,7 +129,8 @@
 
     <div class="col-6 offset-3 mt-3">
       <div class="d-grid">
-        <button type="submit" [disabled]="loginForm.invalid" class="btn btn-primary">
+        <button type="submit" [disabled]="loginForm.invalid" class="btn btn-primary" 
+        (click)="alertWithSuccess()">
           Submit
         </button>
       </div>

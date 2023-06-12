@@ -23,7 +23,7 @@ a{
 a:after {
   content: "";
   position: absolute;
-  background-color: rgb(250, 69, 138);
+  background-color: rgb(232, 114, 160);
   height: 3px;
   width: 0;
   left: 0;

@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -10,6 +11,9 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
  
+  alertWithSuccess(){
+    Swal.fire("Thank You...",'You Submitted Successfully','success')
+  }
  
  
   ngOnInit(): void { }
@@ -62,15 +66,14 @@ export class LoginComponent implements OnInit {
 
     console.log(field);
 
-    this.http.post<{name:string}>('https://angular-1a465-default-rtdb.firebaseio.com/Users.json',field).subscribe((res)=>{
+    this.http.post<{name:string}>('https://users-logins-default-rtdb.firebaseio.com/Users.json',field).subscribe((res)=>{
 
     console.log(res);
-
-    alert("Submitted Successfully")
     
     });
-
-
+    
+    //alert("Submitted Successfully")
+   
     console.log(this.loginForm.valid);
      console.log(this.loginForm.controls);
  
