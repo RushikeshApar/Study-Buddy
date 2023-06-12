@@ -29,7 +29,11 @@ const routes: Routes = [
 {
   path:'**',
   component: HomeComponent
-}
+},
+// {
+//   path:'contactus',
+//   component: ContactUsComponent
+// }
 ];
 
 @NgModule({
