@@ -1,20 +1,36 @@
-.toolbar   {
+.toolbar {
   height: 75px;
-  background-color:cornflowerblue ;
+  background-color: cornflowerblue;
 }
 .sidenav-content {
   height: 88vh;
 }
-.heading{
-      margin-left:45% ;
-      color:rgb(238, 223, 64);     
+.heading {
+  margin-left: 45%;
+  color: rgb(238, 223, 64);
 }
-.loader-container{
+.loader-container {
   position: fixed;
   width: 100%;
   z-index: 99;
 }
 
+a{
+  position: relative;
+  padding: 0 10px;
+}
 
+a:after {
+  content: "";
+  position: absolute;
+  background-color: rgb(250, 69, 138);
+  height: 3px;
+  width: 0;
+  left: 0;
+  bottom: 0px;
+  transition: 0.3s;
+}
 
-
+a:hover:after {
+  width: 100%;
+}
