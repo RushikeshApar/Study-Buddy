@@ -16,3 +16,6 @@ img {
   height: 450px;
   width: 450;
 }
+.form-control{
+  width: 20%;
+}

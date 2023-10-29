@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, FormArray,Validators ,FormBuilder} from '@angular/forms';
 import Swal from 'sweetalert2';
+
 
 
 @Component({
@@ -17,7 +18,8 @@ export class LoginComponent implements OnInit {
  
  
   ngOnInit(): void { }
-
+  
+ 
   loginForm = new FormGroup({
     FirstName: new FormControl('', [
       Validators.required,

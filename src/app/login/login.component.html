@@ -1,18 +1,18 @@
-<!-- loader.component.html -->
+<!-- loader.component.htmlll-->
 
-<div class="container pl-3 pr-3 pb-1 mt-4 mb-3">
+<div class="container  pb-1 mt-4 mb-3 row">
   <form class="border rounded-4 p-3" [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value);loginForm.reset();">
     <div class="row g-0">
       <div class="col text-center p-2 mb-3 bg-light">
         <span class="fs-3" style="color: rgb(176, 47, 199)">Register</span>
       </div>
     </div>
-
+  
     <div class="row">
       <div class="col mb-3">
         <label for="firstname" class="form-label">
-          Name <span style="color: red">*</span></label>
-        <input type="text" class="form-control" id="firstname" formControlName="FirstName" name="fn" />
+          First Name <span style="color: red">*</span></label>
+        <input type="text"  class="form-control" id="firstname" formControlName="FirstName" name="fn" />
 
         <div class="form-text text-danger"
           *ngIf="FirstName.errors?.['required'] && (FirstName.dirty|| FirstName.touched)">
@@ -127,6 +127,8 @@
       Select Gender
     </div>
 
+    
+    
     <div class="col-6 offset-3 mt-3">
       <div class="d-grid">
         <button type="submit" [disabled]="loginForm.invalid" class="btn btn-primary" 
